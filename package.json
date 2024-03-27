@@ -22,6 +22,8 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~16.2.0",
     "@angular/compiler-cli": "~16.2.0",
+    "@nativescript/android": "8.6.2",
+    "@nativescript/ios": "8.6.4",
     "@nativescript/types": "~8.6.0",
     "@nativescript/webpack": "~5.0.18",
     "@ngtools/webpack": "~16.2.0",
