@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { NavigationEnd, Router } from '@angular/router'
 import { RouterExtensions } from '@nativescript/angular'
+import { Theme } from "@nativescript/theme";
 import {
   DrawerTransitionBase,
   RadSideDrawer,
@@ -22,12 +23,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._activatedUrl = '/home'
-    this._sideDrawerTransition = new SlideInOnTopTransition()
+    // this._activatedUrl = '/home'
+    // this._sideDrawerTransition = new SlideInOnTopTransition()
 
-    this.router.events
-      .pipe(filter((event: any) => event instanceof NavigationEnd))
-      .subscribe((event: NavigationEnd) => (this._activatedUrl = event.urlAfterRedirects))
+    // this.router.events
+    //   .pipe(filter((event: any) => event instanceof NavigationEnd))
+    //   .subscribe((event: NavigationEnd) => (this._activatedUrl = event.urlAfterRedirects))
+
+    Theme.setMode(Theme.Light);
   }
 
   get sideDrawerTransition(): DrawerTransitionBase {

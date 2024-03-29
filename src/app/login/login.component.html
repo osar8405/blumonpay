@@ -1,0 +1,25 @@
+<GridLayout>
+    <ScrollView>
+        <GridLayout rows="*, *" horizontalAlignment="center" verticalAlignment="center">
+            <StackLayout row="0" horizontalAlignment="center" verticalAlignment="center" *ngIf="hayCredenciales">
+                <ActivityIndicator width="100" height="100" [busy]="hayCredenciales" class="activity-indicator"
+                    horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
+                <Label text="Ingresando..." textAlignment="center" fontSize="20"></Label>
+            </StackLayout>
+            <StackLayout row="0" horizontalAlignment="center" verticalAlignment="center" *ngIf="!hayCredenciales">
+                <StackLayout>
+                    <Image src="~/app/imagenes/blumonpayicon.png" width="300"></Image>
+                </StackLayout>
+                <StackLayout marginTop="40">
+                    <Label text="Usuario" fontSize="20"></Label>
+                    <TextField hint="Escriba su usuario" [(ngModel)]="usuario" fontSize="18" class="form-input"
+                        autocapitalizationType="none"></TextField>
+                    <Label text="Contraseña" fontSize="20"></Label>
+                    <TextField hint="Escriba su contraseña" [(ngModel)]="contrasena" fontSize="18" secure="true"
+                        class="form-input"></TextField>
+                </StackLayout>
+                <Button text="Iniciar sesión" (tap)="login()" marginTop="20" color="#FFFFFF" backgroundColor="#41429F"></Button>
+            </StackLayout>
+        </GridLayout>
+    </ScrollView>
+</GridLayout>
